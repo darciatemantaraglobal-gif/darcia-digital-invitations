@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/:slug((?!assets|admin|catalog|order|favicon.ico|manifest.json|$).*)",
+      "destination": "https://darciasiskaridho.vercel.app/:slug"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
