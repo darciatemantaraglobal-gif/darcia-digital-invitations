@@ -1,17 +1,16 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Eye } from "lucide-react";
-// Import gambar preview (sementara pake placeholder kalau belum ada)
-// import siskaPreview from "@/assets/siska-preview.png"; 
+// 1. IMPORT GAMBARNYA DI SINI
+import previewImage from "@/assets/Preview.png"; 
 
 const catalogItems = [
   { 
     name: "Siska", 
     tier: "exclusive", 
     badge: "New Arrival", 
-    // UPDATE DI SINI:
-    // Pakai slug relatif biar kelihatan pro (darcia.id/siskaridho)
     url: "/siskaridho", 
-    // image: siskaPreview 
+    // 2. PASANG VARIABLE GAMBAR DI SINI
+    image: previewImage 
   },
   // Item lain...
 ];
@@ -46,9 +45,20 @@ const CatalogPreview = () => {
               >
                 {/* Image Container */}
                 <div className="aspect-[4/5] relative overflow-hidden bg-primary/5">
-                  <div className="absolute inset-0 flex items-center justify-center text-primary/20">
-                    <span className="font-sinera text-4xl opacity-50">{item.name}</span>
-                  </div>
+                  
+                  {/* 3. LOGIC: TAMPILKAN GAMBAR JIKA ADA */}
+                  {item.image ? (
+                    <img 
+                      src={item.image} 
+                      alt={item.name} 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    // Fallback kalau gambar gak ada / error
+                    <div className="absolute inset-0 flex items-center justify-center text-primary/20">
+                       <span className="font-sinera text-4xl opacity-50">{item.name}</span>
+                    </div>
+                  )}
                   
                   {/* Overlay Hover & Button */}
                   <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
