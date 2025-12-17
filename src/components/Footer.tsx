@@ -103,7 +103,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-white/40 text-xs md:text-sm font-light">
             <p>© {new Date().getFullYear()} Darcia. All rights reserved.</p>
             <p className="flex items-center gap-1">
-              Made with <span className="text-red-400 animate-pulse">❤</span> for your special day
+              Made with <span className="text-red-400 animate-pulse">Elegant</span> for your special day
             </p>
           </div>
         </div>
