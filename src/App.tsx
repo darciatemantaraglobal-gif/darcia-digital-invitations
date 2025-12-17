@@ -8,7 +8,7 @@ import Index from "./pages/Index";
 import Catalog from "./pages/Catalog";
 import Order from "./pages/Order";
 import NotFound from "./pages/NotFound";
-// 1. IMPORT COMPONENT BARU
+// 1. IMPORT INI JANGAN LUPA
 import PreviewFrame from "./pages/PreviewFrame"; 
 
 const queryClient = new QueryClient();
@@ -25,13 +25,13 @@ const App = () => (
             <Route path="/catalog" element={<Catalog />} />
             <Route path="/order" element={<Order />} />
             
-            {/* 2. ROUTE KHUSUS PREVIEW (IFRAME) */}
+            {/* 2. JALUR KHUSUS SISKA (Taruh SEBELUM NotFound) */}
             <Route 
               path="/siskaridho" 
               element={<PreviewFrame url="https://darciasiskaridho.vercel.app" />} 
             />
 
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            {/* Catch-all route harus paling bawah */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
