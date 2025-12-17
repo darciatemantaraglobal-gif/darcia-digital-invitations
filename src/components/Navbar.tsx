@@ -10,7 +10,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      // Efek mengecil sedikit saat discroll (opsional, biar dinamis)
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -19,7 +20,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Beranda", href: "/" },
     { name: "Katalog", href: "/catalog" },
-    { name: "Paket", href: "/#packages" }, // Nama dipendekkan biar clean
+    { name: "Paket", href: "/#packages" },
     { name: "FAQ", href: "/#faq" },
   ];
 
@@ -29,104 +30,114 @@ const Navbar = () => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out border-b ${
-        isScrolled
-          ? "bg-primary/80 backdrop-blur-md border-white/5 py-3 shadow-lg" // Scrolled: Compact & Glassy
-          : "bg-transparent border-transparent py-5" // Top: Sedikit lebih lega tapi tetap ramping
-      }`}
-    >
-      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
+    <>
+      {/* Container Utama: Fixed position tapi dikasih margin atas (top-4 / top-6) biar melayang */}
+      <nav className={`fixed left-0 right-0 z-50 flex justify-center transition-all duration-500 ease-out ${
+        isScrolled ? "top-4" : "top-6 md:top-8"
+      }`}>
         
-        {/* LOGO */}
-        <Link to="/" className="flex items-center gap-3 group relative z-50">
-          <img
-            src={logo}
-            alt="Darcia"
-            // Ukuran disesuaikan agar proporsional dengan font kecil yang elegan
-            className="h-7 md:h-9 w-auto transition-transform duration-500 group-hover:scale-105 drop-shadow-sm opacity-90"
-          />
-        </Link>
+        {/* --- FLOATING PILL (KAPSUL) --- */}
+        <div className={`
+          relative flex items-center justify-between 
+          transition-all duration-500 ease-out
+          bg-primary/85 backdrop-blur-xl border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.12)]
+          ${isScrolled 
+            ? "w-[90%] md:w-auto md:min-w-[600px] py-2.5 px-4 rounded-full" 
+            : "w-[92%] md:w-auto md:min-w-[700px] py-3 px-6 rounded-full"
+          }
+        `}>
+          
+          {/* 1. LOGO */}
+          <Link to="/" className="flex items-center group shrink-0">
+            <img
+              src={logo}
+              alt="Darcia"
+              // Logo kecil manis di dalam kapsul
+              className={`w-auto transition-all duration-300 object-contain opacity-90 group-hover:opacity-100 ${
+                isScrolled ? "h-6 md:h-7" : "h-7 md:h-8"
+              }`}
+            />
+          </Link>
 
-        {/* Desktop Navigation - ELEGANT STYLE */}
-        <div className="hidden md:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href}
-              // STYLE ELEGANT:
-              // - text-[11px]: Ukuran kecil
-              // - uppercase: Huruf kapital semua
-              // - tracking-[0.2em]: Spasi antar huruf SANGAT LEBAR (Luxury feel)
-              // - font-medium: Ketebalan sedang
-              className={`text-[11px] uppercase tracking-[0.2em] transition-all duration-500 hover:text-white relative group ${
-                isActive(link.href) 
-                  ? "text-white" 
-                  : "text-white/70"
+          {/* 2. DESKTOP MENU (Centered Links) */}
+          <div className="hidden md:flex items-center gap-8 mx-auto px-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.href}
+                className={`text-[10px] uppercase tracking-[0.2em] font-medium transition-all duration-300 hover:text-white relative group ${
+                  isActive(link.href) ? "text-white" : "text-white/60"
+                }`}
+              >
+                {link.name}
+                {/* Dot Indicator for Active State */}
+                <span className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full transition-all duration-300 ${
+                  isActive(link.href) ? "opacity-100" : "opacity-0 group-hover:opacity-50"
+                }`} />
+              </Link>
+            ))}
+          </div>
+
+          {/* 3. CTA BUTTON (Desktop) */}
+          <div className="hidden md:block shrink-0">
+            <a
+              href="https://wa.me/6282254153840?text=Halo%20kak,%20saya%20mau%20pesan%20undangan%20website%20Darcia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`bg-white text-primary rounded-full font-bold uppercase tracking-widest transition-all duration-300 hover:shadow-lg hover:bg-emerald-50 hover:-translate-y-0.5 ${
+                isScrolled ? "px-4 py-1.5 text-[9px]" : "px-5 py-2 text-[10px]"
               }`}
             >
-              {link.name}
-              {/* Garis bawah animasi (Underline animation) */}
-              <span className={`absolute -bottom-1 left-0 h-[1px] bg-white transition-all duration-300 ${
-                 isActive(link.href) ? "w-full opacity-100" : "w-0 opacity-0 group-hover:w-full group-hover:opacity-50"
-              }`} />
-            </Link>
-          ))}
-          
-          {/* CTA Button - Minimalist Outline / Solid Hybrid */}
-          <a
-            href="https://wa.me/6282254153840?text=Halo%20kak,%20saya%20mau%20pesan%20undangan%20website%20Darcia"
-            target="_blank"
-            rel="noopener noreferrer"
-            // Button style: Putih solid tapi font di dalamnya kecil & tracking lebar
-            className="bg-white text-primary px-6 py-2 rounded-full text-[10px] uppercase tracking-[0.15em] font-bold hover:bg-emerald-50 transition-all duration-500 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:-translate-y-0.5"
+              Pesan
+            </a>
+          </div>
+
+          {/* 4. MOBILE MENU TOGGLE */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-1 text-white/80 hover:text-white transition-colors"
           >
-            Pesan Sekarang
-          </a>
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+
         </div>
+      </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-1 text-white hover:text-white/80 transition-colors z-50 relative"
-        >
-          {isMobileMenuOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      <div
-        className={`md:hidden fixed inset-0 bg-primary/95 backdrop-blur-xl z-40 flex items-center justify-center transition-all duration-500 ${
-          isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
-        }`}
-      >
-        <div className="flex flex-col gap-8 items-center text-center">
+      {/* --- MOBILE MENU DROPDOWN (FLOATING CARD) --- */}
+      {/* Muncul melayang di bawah navbar utama, bukan fullscreen */}
+      <div className={`
+        fixed left-4 right-4 z-40 transition-all duration-500 ease-in-out transform
+        bg-primary/95 backdrop-blur-xl border border-white/10 shadow-2xl rounded-2xl overflow-hidden
+        ${isMobileMenuOpen 
+          ? "top-20 opacity-100 translate-y-0" 
+          : "top-16 opacity-0 -translate-y-4 pointer-events-none"
+        }
+      `}>
+        <div className="flex flex-col items-center py-6 gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`text-sm uppercase tracking-[0.25em] font-light transition-all duration-300 ${
-                isActive(link.href) ? "text-white scale-110 font-normal" : "text-white/60 hover:text-white"
+              className={`text-xs uppercase tracking-[0.25em] font-medium transition-colors ${
+                isActive(link.href) ? "text-white" : "text-white/60 hover:text-white"
               }`}
             >
               {link.name}
             </Link>
           ))}
-          
-          <div className="w-10 h-[1px] bg-white/20 my-2"></div>
-
+          <div className="w-12 h-[1px] bg-white/10" />
           <a
             href="https://wa.me/6282254153840?text=Halo%20kak,%20saya%20mau%20pesan%20undangan%20website%20Darcia"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary bg-white px-8 py-3 rounded-full text-xs uppercase tracking-[0.15em] font-bold hover:bg-emerald-50 transition-transform active:scale-95"
+            className="bg-white text-primary px-8 py-2.5 rounded-full text-[10px] uppercase tracking-widest font-bold hover:bg-emerald-50"
           >
             Pesan Sekarang
           </a>
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 
