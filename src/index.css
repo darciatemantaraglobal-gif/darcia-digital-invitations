@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-/* --- FIX DISINI --- */
-/* Hapus '.src', cukup './assets' */
+/* --- FIXED FONTS (LOAD DARI PUBLIC) --- */
+
 @font-face {
   font-family: 'South';
-  src: url('./assets/South.otf') format('opentype');
+  /* Pake slash depan '/' biar kebaca di halaman manapun */
+  src: url('/fonts/South.otf') format('opentype'); 
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -12,11 +13,19 @@
 
 @font-face {
   font-family: 'Sinera';
-  src: url('https://fonts.cdnfonts.com/s/29361/Sinera.woff') format('woff');
+  /* Jangan pake link CDN, pake file lokal di public */
+  /* Pastikan lo udah upload Sinera.otf ke folder public/fonts */
+  src: url('/fonts/Sinera.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ... SISANYA KE BAWAH SAMA AJA ... */
 
 @tailwind base;
 @tailwind components;
