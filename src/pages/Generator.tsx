@@ -63,7 +63,7 @@ const Generator = () => {
               </div>
               <textarea 
                 rows={10}
-                placeholder="Tulis nama tamu (satu nama per baris)...&#10;Contoh:&#10;Bpk. Daru&#10;Siska & Ridho&#10;Keluarga Besar AIGYPT"
+                placeholder="Tulis nama tamu (satu nama per baris)...&#10;Contoh:&#10;Bpk. Ahmad&#10;Siska & Ridho&#10;Keluarga Besar"
                 className="w-full px-5 py-4 rounded-2xl border border-primary/10 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-sm text-primary leading-relaxed"
                 value={bulkNames}
                 onChange={(e) => setBulkNames(e.target.value)}
