@@ -6,7 +6,6 @@ import Philosophy from "@/components/Philosophy";
 import InvitationLetter from "@/components/InvitationLetter";
 import Packages from "@/components/Packages";
 import CatalogPreview from "@/components/CatalogPreview";
-import InstagramTemplate from "@/components/InstagramTemplate";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -31,7 +30,6 @@ const Index = () => {
         <InvitationLetter />
         <Packages />
         <CatalogPreview />
-        <InstagramTemplate />
         <Testimonials />
         <FAQ />
       </main>
