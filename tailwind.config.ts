@@ -69,10 +69,13 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      // --- UPDATE BAGIAN INI ---
       fontFamily: {
         serif: ['Sinera', 'Georgia', 'serif'],
         sans: ['Montserrat', 'system-ui', 'sans-serif'],
+        south: ['South', 'cursive', 'sans-serif'], // Font South ditambahkan di sini
       },
+      // -------------------------
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
