@@ -23,7 +23,7 @@ const Testimonials = () => {
     <section className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-up">
           <h2 className="font-serif text-4xl md:text-6xl text-foreground mb-4">
             They <span className="italic text-primary">Said</span>
           </h2>
@@ -38,7 +38,8 @@ const Testimonials = () => {
           {testimonials.map((testimonial, idx) => (
             <div
               key={idx}
-              className="bg-card rounded-3xl p-8 shadow-soft hover:shadow-card transition-all duration-300"
+              className="bg-card rounded-3xl p-8 shadow-soft hover:shadow-elevated transition-all duration-500 hover:-translate-y-2 animate-fade-up"
+              style={{ animationDelay: `${idx * 0.15}s` }}
             >
               <Quote className="w-10 h-10 text-primary/30 mb-4" />
               <p className="text-foreground leading-relaxed mb-6">

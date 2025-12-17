@@ -28,7 +28,7 @@ const CatalogPreview = () => {
             {catalogItems.map((item, idx) => (
               <div
                 key={idx}
-                className="group relative bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-card transition-all duration-300"
+                className="group relative bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-elevated transition-all duration-500 hover:-translate-y-3 animate-fade-up"
               >
                 {/* Placeholder Image */}
                 <div className="aspect-square bg-gradient-to-br from-primary/10 to-emerald-light/5 flex items-center justify-center">
@@ -70,7 +70,7 @@ const CatalogPreview = () => {
         <div className="text-center mt-12">
           <Link
             to="/catalog"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-full font-medium font-sans hover:bg-emerald-dark transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-full font-medium font-sans hover:bg-emerald-dark hover:scale-105 transition-all duration-300"
           >
             Lihat Semua Katalog
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

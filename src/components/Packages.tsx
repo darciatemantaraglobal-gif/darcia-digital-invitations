@@ -73,7 +73,7 @@ const Packages = () => {
           {packages.map((pkg, idx) => (
             <div
               key={idx}
-              className={`relative rounded-3xl p-6 md:p-8 transition-all duration-300 hover:-translate-y-2 max-w-md w-full ${
+              className={`relative rounded-3xl p-6 md:p-8 transition-all duration-500 hover:-translate-y-3 hover:shadow-elevated max-w-md w-full animate-fade-up hover-glow ${
                 pkg.highlight
                   ? "bg-primary text-primary-foreground shadow-elevated"
                   : "bg-background text-foreground shadow-card"
@@ -128,7 +128,7 @@ const Packages = () => {
 
         {/* Custom Design CTA */}
         <div className="mt-16 text-center">
-          <div className="inline-block bg-background rounded-2xl p-8 md:p-12 shadow-card">
+          <div className="inline-block bg-background rounded-2xl p-8 md:p-12 shadow-card hover-lift animate-fade-up" style={{ animationDelay: '0.2s' }}>
             <h3 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
               Custom Design
             </h3>
@@ -136,10 +136,10 @@ const Packages = () => {
               Punya konsep desain sendiri? Kami siap bantu bikin jadi nyata!
             </p>
             <a
-              href="https://wa.me/6282254153840?text=Halo%20kak,%20saya%20mau%20konsul%20terkait%20Custom%20Design"
+              href="https://wa.me/6285265048930?text=Halo%20kak,%20saya%20mau%20konsul%20terkait%20Custom%20Design"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-full font-medium hover:bg-emerald-dark transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-full font-medium hover:bg-emerald-dark hover:scale-105 transition-all duration-300"
             >
               Konsultasi Sekarang
             </a>
