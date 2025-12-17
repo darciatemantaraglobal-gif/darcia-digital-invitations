@@ -70,7 +70,7 @@ export default {
         },
       },
       fontFamily: {
-        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+        serif: ['Sinera', 'Georgia', 'serif'],
         sans: ['Montserrat', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
