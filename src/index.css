@@ -3,7 +3,7 @@
 /* Font South Custom */
 @font-face {
   font-family: 'South';
-  src: url('./assets/South.otf') format('opentype');
+  src: url('.src/assets/South.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
