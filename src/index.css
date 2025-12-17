@@ -5,7 +5,7 @@
 @font-face {
   font-family: 'South';
   /* Pake slash depan '/' biar kebaca di halaman manapun */
-  src: url('/fonts/South.otf') format('opentype'); 
+  src: url('/South.otf') format('opentype'); 
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -15,7 +15,7 @@
   font-family: 'Sinera';
   /* Jangan pake link CDN, pake file lokal di public */
   /* Pastikan lo udah upload Sinera.otf ke folder public/fonts */
-  src: url('/fonts/Sinera.otf') format('opentype');
+  src: url('/Sinera.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
