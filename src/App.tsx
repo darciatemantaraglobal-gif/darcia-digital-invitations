@@ -10,6 +10,23 @@ import Order from "./pages/Order";
 import NotFound from "./pages/NotFound";
 // 1. IMPORT INI JANGAN LUPA
 import PreviewFrame from "./pages/PreviewFrame"; 
+// ... import yang lain
+import Generator from "./pages/Generator";
+
+const App = () => (
+  // ... rest of code
+  <Routes>
+    <Route path="/" element={<Index />} />
+    <Route path="/catalog" element={<Catalog />} />
+    <Route path="/generate" element={<Generator />} /> {/* <--- TAMBAHIN INI */}
+    <Route 
+      path="/siskaridho" 
+      element={<PreviewFrame url="https://darciasiskaridho.vercel.app" />} 
+    />
+    <Route path="*" element={<NotFound />} />
+  </Routes>
+  // ... rest of code
+);
 
 const queryClient = new QueryClient();
 
