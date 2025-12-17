@@ -1,13 +1,43 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Helmet } from "react-helmet-async";
+import Navbar from "@/components/Navbar";
+import MarqueeBanner from "@/components/MarqueeBanner";
+import Hero from "@/components/Hero";
+import Philosophy from "@/components/Philosophy";
+import InvitationLetter from "@/components/InvitationLetter";
+import Packages from "@/components/Packages";
+import CatalogPreview from "@/components/CatalogPreview";
+import InstagramTemplate from "@/components/InstagramTemplate";
+import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      <Helmet>
+        <title>Darcia - Website Undangan Digital Premium</title>
+        <meta
+          name="description"
+          content="Darcia - Specialised website invitation yang bikin momen pernikahan kamu jadi lebih effortless, modern, dan elegant. Simple but classy."
+        />
+      </Helmet>
+
+      <MarqueeBanner />
+      <Navbar />
+      <main>
+        <Hero />
+        <Philosophy />
+        <InvitationLetter />
+        <Packages />
+        <CatalogPreview />
+        <InstagramTemplate />
+        <Testimonials />
+        <FAQ />
+      </main>
+      <Footer />
+      <WhatsAppFloat />
+    </>
   );
 };
 
