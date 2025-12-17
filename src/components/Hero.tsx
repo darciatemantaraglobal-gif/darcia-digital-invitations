@@ -14,7 +14,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
       </div>
 
-      {/* --- TOP SECTION: RUNNING TEXT ONLY --- */}
+      {/* --- TOP SECTION: RUNNING TEXT --- */}
       <div className="absolute top-0 w-full z-20">
         <div className="w-full bg-foreground/5 backdrop-blur-md border-b border-white/5 py-2 md:py-3 overflow-hidden">
           <div className="animate-marquee whitespace-nowrap text-center">
@@ -27,9 +27,10 @@ const Hero = () => {
 
       {/* --- MAIN CONTENT --- */}
       <div className="relative z-10 container mx-auto px-4 md:px-8 flex flex-col items-center">
-        <div className="max-w-4xl mx-auto text-center w-full">
+        <div className="max-w-4xl mx-auto text-center w-full flex flex-col items-center">
           
-          <div className="p-6 md:p-12 rounded-2xl md:rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl animate-fade-up">
+          {/* 1. GLASS CARD (Hanya Teks Judul & Deskripsi) */}
+          <div className="p-8 md:p-12 rounded-2xl md:rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl animate-fade-up mb-8 md:mb-12">
             
             <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-ivory font-light leading-tight mb-4 md:mb-8">
               Specialised <br />
@@ -39,6 +40,7 @@ const Hero = () => {
               Invitation
             </h1>
 
+            {/* Margin bottom dihilangkan (mb-0) karena tidak ada elemen lagi di bawahnya dalam kotak ini */}
             <p className="text-ivory/80 text-sm md:text-lg leading-relaxed max-w-xs md:max-w-lg mx-auto font-light tracking-wide">
               Take your wedding to the next level with Darcia. Momen pernikahan jadi lebih{" "}
               <span className="text-emerald-300 font-medium italic">effortless</span>,{" "}
@@ -46,25 +48,27 @@ const Hero = () => {
               <span className="text-emerald-300 font-medium italic">elegant</span>.
             </p>
 
-            {/* UPDATE DI SINI: Ditambah mt-8 (mobile) dan md:mt-12 (desktop) */}
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-8 md:mt-12">
-              <a
-                href="#packages"
-                className="group relative inline-flex items-center gap-3 bg-ivory text-black px-6 py-3 md:px-8 md:py-4 rounded-full font-medium text-sm md:text-base transition-all duration-500 hover:bg-emerald-light hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
-              >
-                <span>Lihat Paket</span>
-                <svg
-                  className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
-
           </div>
+
+          {/* 2. FLOATING BUTTON (Di luar kotak) */}
+          {/* Dikasih delay animasi dikit biar munculnya bergantian setelah kotak teks */}
+          <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
+            <a
+              href="#packages"
+              className="group relative inline-flex items-center gap-3 bg-ivory text-black px-8 py-4 md:px-10 md:py-5 rounded-full font-medium text-sm md:text-base transition-all duration-500 hover:bg-emerald-light hover:scale-110 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]"
+            >
+              <span>Lihat Paket</span>
+              <svg
+                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+
         </div>
 
         {/* Decorative Text */}
