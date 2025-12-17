@@ -1,6 +1,5 @@
 import heroImage from "@/assets/story.png";
-// Ganti dengan path logo Anda yang sebenarnya
-import logoImage from "@/assets/logo.png"; 
+import logoImage from "@/assets/darcia-logo.png"; // Nama file logo diperbarui
 
 const Hero = () => {
   return (
@@ -25,26 +24,20 @@ const Hero = () => {
             <div className="mb-2 md:mb-4">
                <img 
                  src={logoImage} 
-                 alt="Brand Logo" 
-                 // Menambahkan sedikit glow juga pada logo agar serasi (opsional)
-                 className="w-12 md:w-16 h-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.4)] opacity-95"
+                 alt="Darcia Logo" 
+                 // Ukuran logo disesuaikan, opacity sedikit diturunkan agar menyatu dengan background malam
+                 className="w-12 md:w-16 h-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] opacity-90"
                />
             </div>
 
             {/* 2. SUB-HEADLINE (Font South) */}
-            {/* Menggunakan drop-shadow putih halus agar sedikit bersinar */}
             <span className="font-south text-white text-3xl md:text-5xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] relative z-10 mb-[-5px] md:mb-[-10px]">
               The Specialised
             </span>
 
-            {/* 3. MAIN HEADLINE (GLOWING EFFECT DISINI) */}
-            {/* PENJELASAN EFEK GLOW:
-               Kita menggunakan multiple text-shadow:
-               1. _0_2px_5px_rgba(0,0,0,0.3) -> Shadow gelap tipis untuk definisi agar teks tetap tajam.
-               2. _0_0_20px_rgba(255,255,255,0.9) -> Glow putih terang utama di sekitar huruf.
-               3. _0_0_50px_rgba(255,255,255,0.6) -> Glow putih ambient yang lebih lebar dan lembut.
-            */}
-            <h1 className="font-sinera text-[3.5rem] sm:text-6xl md:text-8xl lg:text-[7.5rem] text-white leading-[0.9] [text-shadow:_0_2px_5px_rgba(0,0,0,0.3),_0_0_20px_rgba(255,255,255,0.9),_0_0_50px_rgba(255,255,255,0.6)]">
+            {/* 3. MAIN HEADLINE (GLOWING EFFECT) */}
+            {/* Efek cahaya putih (glow) ada di class text-shadow arbitrary values di bawah ini */}
+            <h1 className="font-sinera text-[3.5rem] sm:text-6xl md:text-8xl lg:text-[7.5rem] text-white leading-[0.9] [text-shadow:_0_2px_5px_rgba(0,0,0,0.3),_0_0_20px_rgba(255,255,255,0.8),_0_0_40px_rgba(255,255,255,0.5)]">
               Digital <br />
               Wedding <br />
               Invitation
