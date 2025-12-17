@@ -1,18 +1,19 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Eye } from "lucide-react";
-// Import gambar jika sudah ada, atau biarkan null untuk placeholder
-import siskaPreview from "@/assets/siska-preview.png"; 
+// Import gambar preview (sementara pake placeholder kalau belum ada)
+// import siskaPreview from "@/assets/siska-preview.png"; 
 
 const catalogItems = [
   { 
     name: "Siska", 
     tier: "exclusive", 
     badge: "New Arrival", 
-    // Link langsung ke Demo Vercel
-    url: "https://darciasiskaridho.vercel.app", 
-    image: siskaPreview // Masukkan variabel gambar di sini (atau null)
+    // UPDATE DI SINI:
+    // Pakai slug relatif biar kelihatan pro (darcia.id/siskaridho)
+    url: "/siskaridho", 
+    // image: siskaPreview 
   },
-  // Tambahkan item lain di sini...
+  // Item lain...
 ];
 
 const CatalogPreview = () => {
@@ -20,18 +21,15 @@ const CatalogPreview = () => {
     <section className="py-24 md:py-32 bg-white">
       <div className="container mx-auto px-4 md:px-8">
         
-        {/* --- HEADER (Style: Elegant Mix) --- */}
+        {/* --- HEADER --- */}
         <div className="text-center mb-16 md:mb-20 flex flex-col items-center animate-fade-up">
-          {/* Script Accent */}
           <span className="font-south text-primary text-4xl md:text-5xl mb-[-5px] md:mb-[-10px] relative z-10 transform -rotate-2 opacity-90">
             The Catalog
           </span>
-          {/* Main Headline */}
           <h2 className="font-sinera text-5xl sm:text-6xl md:text-7xl text-primary leading-[0.9] tracking-tight mb-6">
             Our <br />
             Collections
           </h2>
-          {/* Description */}
           <p className="font-sans text-primary/70 text-sm md:text-base italic tracking-wide max-w-2xl mx-auto">
             Temukan desain yang paling mewakili cerita cinta Anda.
           </p>
@@ -44,13 +42,11 @@ const CatalogPreview = () => {
             {catalogItems.map((item, idx) => (
               <div
                 key={idx}
-                // Style Card: Cream Transparent BG + Thin Border + Rounded 2rem
                 className="group relative bg-[#F7F0E6]/30 border border-primary/10 rounded-[2rem] overflow-hidden hover:shadow-[0_15px_40px_rgba(12,101,135,0.1)] transition-all duration-500 hover:-translate-y-2"
               >
                 {/* Image Container */}
                 <div className="aspect-[4/5] relative overflow-hidden bg-primary/5">
                   
-                  {/* Logic: Gambar vs Placeholder */}
                   {item.image ? (
                     <img 
                       src={item.image} 
@@ -66,7 +62,7 @@ const CatalogPreview = () => {
                   {/* Overlay Hover & Button */}
                   <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
                     
-                    {/* --- TOMBOL LIVE PREVIEW --- */}
+                    {/* BUTTON LINK */}
                     <a 
                       href={item.url} 
                       target="_blank" 
