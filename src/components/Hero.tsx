@@ -15,33 +15,37 @@ const Hero = () => {
       </div>
 
       {/* --- MAIN CONTENT --- */}
-      <div className="relative z-10 container mx-auto px-4 flex flex-col items-center pt-20 md:pt-28">
+      {/* Padding atas disesuaikan biar teks pas di tengah area langit */}
+      <div className="relative z-10 container mx-auto px-4 flex flex-col items-center pt-24 md:pt-32">
         
         {/* 1. LOGO */}
-        <div className="mb-4 md:mb-6">
+        <div className="mb-4">
             <img 
               src={logoImage} 
               alt="Darcia Logo" 
-              className="w-14 md:w-20 h-auto object-contain drop-shadow-md opacity-90"
+              className="w-10 md:w-14 h-auto object-contain drop-shadow-md opacity-90"
             />
         </div>
 
-        {/* 2. SUB-HEADLINE (LURUS) */}
-        {/* Hapus class 'transform -rotate-3' biar lurus */}
-        <span className="font-south text-white text-[2.5rem] md:text-6xl drop-shadow-md relative z-20 mb-[-5px] md:mb-[-10px]">
+        {/* 2. SUB-HEADLINE (The Specialised) */}
+        {/* Ukuran: text-3xl (mobile) -> text-5xl (desktop). Gak raksasa lagi. */}
+        {/* Lurus (tanpa rotate), margin bawah sedikit minus biar deket sama headline */}
+        <span className="font-south text-white text-3xl md:text-5xl drop-shadow-md relative z-20 mb-[-5px] md:mb-[-10px]">
           The Specialised
         </span>
 
-        {/* 3. MAIN HEADLINE (SPASI LEBIH LEGA) */}
-        {/* leading-[1.1]: Jarak antar baris diperlebar biar gak dempet */}
-        <h1 className="font-sinera text-center text-white text-[4rem] sm:text-[5.5rem] md:text-[7.5rem] lg:text-[8.5rem] leading-[1.1] tracking-tight drop-shadow-lg">
+        {/* 3. MAIN HEADLINE (Digital Wedding Invitation) */}
+        {/* Ukuran: text-5xl (mobile) -> text-7xl (desktop). Ini ukuran "Sweet Spot". */}
+        {/* Leading: 1.05 (sedikit longgar biar enak dibaca, tapi tetep satu kesatuan) */}
+        <h1 className="font-sinera text-center text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight drop-shadow-lg">
           Digital <br />
           Wedding <br />
           Invitation
         </h1>
 
         {/* 4. TAGLINE */}
-        <p className="mt-8 text-white text-sm md:text-lg font-sans italic font-light tracking-wide drop-shadow-md">
+        {/* Ukuran font kecil manis, jarak mt-6 biar gak terlalu jauh */}
+        <p className="mt-6 text-white text-xs md:text-base font-sans italic font-light tracking-wider drop-shadow-md opacity-90">
           Every couple has a story
         </p>
 
