@@ -48,7 +48,7 @@ const Generator = () => {
         {/* --- HEADER --- */}
         <div className="text-center mb-10">
           <span className="font-south text-primary text-4xl block mb-1">Darcia Admin</span>
-          <h1 className="font-sinera text-5xl text-primary leading-tight">Bulk Invitation</h1>
+          <h1 className="font-sinera text-5xl text-primary leading-tight">Invitation List</h1>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
