@@ -1,8 +1,15 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
-const PreviewFrame = ({ url }) => {
+// Definisi tipe data untuk props (Biar TS seneng)
+interface PreviewFrameProps {
+  url: string;
+}
+
+const PreviewFrame = ({ url }: PreviewFrameProps) => {
   
-  // Optional: Disable scroll di body website utama biar gak double scroll
+  // Disable scroll di body utama saat preview dibuka
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -11,16 +18,18 @@ const PreviewFrame = ({ url }) => {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-white w-full h-full">
-      {/* Tombol Back (Opsional, biar user bisa balik ke katalog) */}
-      <a 
-        href="/catalog" 
-        className="absolute top-4 left-4 z-50 bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-white hover:text-primary transition-all shadow-lg"
+    <div className="fixed inset-0 z-[9999] w-full h-screen bg-white">
+      
+      {/* Tombol Back */}
+      <Link 
+        to="/catalog" 
+        className="absolute top-4 left-4 z-50 flex items-center gap-2 bg-black/20 backdrop-blur-md border border-white/20 text-white px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-black/40 transition-all duration-300 group"
       >
-        ← Back to Catalog
-      </a>
+        <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+        Back
+      </Link>
 
-      {/* IFRAME FULLSCREEN */}
+      {/* Iframe */}
       <iframe 
         src={url}
         title="Live Preview"
