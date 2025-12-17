@@ -43,7 +43,7 @@ const Generator = () => {
             </label>
             <input 
               type="text" 
-              placeholder="Contoh: Bpk. Daru & Keluarga"
+              placeholder="Contoh: Bpk. Ahmad & Keluarga"
               className="w-full px-6 py-4 rounded-2xl border border-primary/10 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-primary font-sans"
               value={name}
               onChange={(e) => setName(e.target.value)}
