@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import MarqueeBanner from "@/components/MarqueeBanner";
 import Hero from "@/components/Hero";
 import Philosophy from "@/components/Philosophy";
-import InvitationLetter from "@/components/InvitationLetter";
 import Packages from "@/components/Packages";
 import CatalogPreview from "@/components/CatalogPreview";
 import Testimonials from "@/components/Testimonials";
@@ -27,7 +26,6 @@ const Index = () => {
       <main>
         <Hero />
         <Philosophy />
-        <InvitationLetter />
         <Packages />
         <CatalogPreview />
         <Testimonials />

@@ -1,20 +1,11 @@
 import { Check } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const packages = [
   {
-    name: "Basic",
-    tagline: "Khusus Tanpa Foto",
-    features: [
-      "Semua Fitur Dasar",
-      "Desain Basic",
-      "Masa Aktif 4 Bulan",
-    ],
-    highlight: false,
-    tier: "basic",
-  },
-  {
     name: "Premium",
     tagline: "Rekomendasi",
+    price: "Rp 150.000",
     features: [
       "Semua Fitur Dasar",
       "Desain Premium",
@@ -29,6 +20,7 @@ const packages = [
   {
     name: "Deluxe",
     tagline: "Best Value",
+    price: "Rp 250.000",
     features: [
       "Semua Fitur Dasar",
       "Semua Desain (Bebas Pilih)",
@@ -46,6 +38,7 @@ const packages = [
   {
     name: "Exclusive",
     tagline: "All-in-One",
+    price: "Rp 350.000",
     features: [
       "Semua Fitur Dasar",
       "Semua Desain (Bebas Pilih)",
@@ -117,7 +110,7 @@ const Packages = () => {
         </div>
 
         {/* Packages Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {packages.map((pkg, idx) => (
             <div
               key={idx}
@@ -135,11 +128,16 @@ const Packages = () => {
               
               <h3 className="font-serif text-3xl mb-1">{pkg.name}</h3>
               <p
-                className={`text-sm mb-6 ${
+                className={`text-sm mb-2 ${
                   pkg.highlight ? "text-primary-foreground/80" : "text-muted-foreground"
                 }`}
               >
                 {pkg.tagline}
+              </p>
+              <p className={`text-2xl font-semibold mb-6 ${
+                pkg.highlight ? "text-gold" : "text-primary"
+              }`}>
+                {pkg.price}
               </p>
 
               <ul className="space-y-3 mb-8">
@@ -155,10 +153,8 @@ const Packages = () => {
                 ))}
               </ul>
 
-              <a
-                href={`https://wa.me/6282254153840?text=Halo%20kak,%20saya%20mau%20pesan%20paket%20${pkg.name}%20Darcia`}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/order"
                 className={`block w-full text-center py-3 rounded-full font-medium transition-all duration-300 ${
                   pkg.highlight
                     ? "bg-background text-primary hover:bg-ivory-dark"
@@ -166,7 +162,7 @@ const Packages = () => {
                 }`}
               >
                 Pilih Paket
-              </a>
+              </Link>
             </div>
           ))}
         </div>
