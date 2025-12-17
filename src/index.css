@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
+/* Font South Custom */
+@font-face {
+  font-family: 'South';
+  src: url('./assets/South.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: 'Sinera';
   src: url('https://fonts.cdnfonts.com/s/29361/Sinera.woff') format('woff');
@@ -14,41 +23,48 @@
 
 @layer base {
   :root {
-    /* Dark Teal Emerald & Ivory Theme */
-    --background: 40 33% 98%;
-    --foreground: 168 70% 12%;
+    /* --- COLOR PALETTE UPDATE: #0C6587 (Deep Ocean/Teal) --- */
+    /* HSL Value: 196 deg, 84% Saturation, 29% Lightness */
+
+    --background: 40 33% 98%; /* Tetap Cream Ivory */
+    
+    /* Foreground (Teks Utama) -> Versi sangat gelap dari warna utama */
+    --foreground: 196 90% 12%; 
 
     --card: 40 25% 96%;
-    --card-foreground: 168 70% 12%;
+    --card-foreground: 196 90% 12%;
 
     --popover: 40 33% 98%;
-    --popover-foreground: 168 70% 12%;
+    --popover-foreground: 196 90% 12%;
 
-    --primary: 168 70% 18%;
+    /* PRIMARY COLOR (Warna Brand Utama #0C6587) */
+    --primary: 196 84% 29%;
     --primary-foreground: 40 33% 98%;
 
     --secondary: 40 20% 94%;
-    --secondary-foreground: 168 70% 12%;
+    --secondary-foreground: 196 90% 12%;
 
     --muted: 40 15% 92%;
-    --muted-foreground: 168 40% 35%;
+    --muted-foreground: 196 40% 35%;
 
-    --accent: 45 75% 55%;
-    --accent-foreground: 168 70% 12%;
+    --accent: 45 75% 55%; /* Gold accent tetap */
+    --accent-foreground: 196 90% 12%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 40 33% 98%;
 
-    --border: 168 20% 85%;
-    --input: 168 20% 85%;
-    --ring: 168 70% 18%;
+    --border: 196 20% 85%;
+    --input: 196 20% 85%;
+    --ring: 196 84% 29%;
 
     --radius: 0.5rem;
 
-    /* Custom colors */
-    --emerald: 168 70% 18%;
-    --emerald-dark: 168 75% 12%;
-    --emerald-light: 168 50% 35%;
+    /* Custom Colors Re-mapped */
+    /* --emerald sekarang isinya warna biru #0C6587 biar gak perlu ubah nama class di komponen */
+    --emerald: 196 84% 29%;      /* #0C6587 */
+    --emerald-dark: 196 90% 15%; /* Versi lebih gelap */
+    --emerald-light: 196 70% 45%; /* Versi lebih terang */
+    
     --ivory: 40 33% 98%;
     --ivory-dark: 40 20% 94%;
     --cream: 35 30% 92%;
@@ -57,68 +73,67 @@
     /* Typography */
     --font-serif: 'Sinera', Georgia, serif;
     --font-sans: 'Montserrat', system-ui, sans-serif;
+    --font-south: 'South', cursive;
 
-    /* Gradients */
-    --gradient-emerald: linear-gradient(135deg, hsl(168 70% 18%), hsl(168 75% 12%));
+    /* Gradients Updated */
+    --gradient-emerald: linear-gradient(135deg, hsl(196 84% 29%), hsl(196 90% 15%));
     --gradient-soft: linear-gradient(180deg, hsl(40 33% 98%), hsl(40 20% 94%));
-    --gradient-hero: linear-gradient(135deg, hsl(168 70% 18% / 0.9), hsl(168 75% 12% / 0.95));
+    --gradient-hero: linear-gradient(135deg, hsl(196 84% 29% / 0.9), hsl(196 90% 15% / 0.95));
 
-    /* Shadows */
-    --shadow-soft: 0 4px 20px hsl(168 70% 18% / 0.08);
-    --shadow-card: 0 10px 40px hsl(168 70% 18% / 0.1);
-    --shadow-elevated: 0 20px 60px hsl(168 70% 18% / 0.15);
+    /* Shadows Updated with new color tint */
+    --shadow-soft: 0 4px 20px hsl(196 84% 29% / 0.08);
+    --shadow-card: 0 10px 40px hsl(196 84% 29% / 0.1);
+    --shadow-elevated: 0 20px 60px hsl(196 84% 29% / 0.15);
 
-    /* Animations */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
+    /* Sidebar Variables */
     --sidebar-background: 40 33% 98%;
-    --sidebar-foreground: 168 70% 12%;
-    --sidebar-primary: 168 70% 18%;
+    --sidebar-foreground: 196 90% 12%;
+    --sidebar-primary: 196 84% 29%;
     --sidebar-primary-foreground: 40 33% 98%;
     --sidebar-accent: 40 20% 94%;
-    --sidebar-accent-foreground: 168 70% 12%;
-    --sidebar-border: 168 20% 85%;
-    --sidebar-ring: 168 70% 18%;
+    --sidebar-accent-foreground: 196 90% 12%;
+    --sidebar-border: 196 20% 85%;
+    --sidebar-ring: 196 84% 29%;
   }
 
   .dark {
-    --background: 156 40% 8%;
+    /* Dark Mode Theme - Base Dark Background */
+    --background: 196 50% 8%; /* Sangat gelap, mendekati hitam biru */
     --foreground: 40 33% 98%;
 
-    --card: 156 35% 12%;
+    --card: 196 45% 12%;
     --card-foreground: 40 33% 98%;
 
-    --popover: 156 40% 8%;
+    --popover: 196 50% 8%;
     --popover-foreground: 40 33% 98%;
 
-    --primary: 160 70% 50%;
-    --primary-foreground: 156 40% 8%;
+    --primary: 196 70% 50%; /* Lebih terang di dark mode agar kontras */
+    --primary-foreground: 196 50% 8%;
 
-    --secondary: 156 30% 18%;
+    --secondary: 196 30% 18%;
     --secondary-foreground: 40 33% 98%;
 
-    --muted: 156 30% 18%;
+    --muted: 196 30% 18%;
     --muted-foreground: 40 20% 70%;
 
-    --accent: 160 60% 45%;
+    --accent: 196 60% 45%;
     --accent-foreground: 40 33% 98%;
 
     --destructive: 0 62% 30%;
     --destructive-foreground: 40 33% 98%;
 
-    --border: 156 30% 25%;
-    --input: 156 30% 25%;
-    --ring: 160 70% 50%;
+    --border: 196 30% 25%;
+    --input: 196 30% 25%;
+    --ring: 196 70% 50%;
 
-    --sidebar-background: 156 40% 8%;
+    --sidebar-background: 196 50% 8%;
     --sidebar-foreground: 40 33% 98%;
-    --sidebar-primary: 160 70% 50%;
-    --sidebar-primary-foreground: 156 40% 8%;
-    --sidebar-accent: 156 30% 18%;
+    --sidebar-primary: 196 70% 50%;
+    --sidebar-primary-foreground: 196 50% 8%;
+    --sidebar-accent: 196 30% 18%;
     --sidebar-accent-foreground: 40 33% 98%;
-    --sidebar-border: 156 30% 25%;
-    --sidebar-ring: 160 70% 50%;
+    --sidebar-border: 196 30% 25%;
+    --sidebar-ring: 196 70% 50%;
   }
 }
 
@@ -126,211 +141,63 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: var(--font-sans);
   }
-
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
   }
 }
 
 @layer components {
-  .font-serif {
-    font-family: var(--font-serif);
-  }
-
-  .font-sans {
-    font-family: var(--font-sans);
-  }
-
-  .gradient-emerald {
-    background: var(--gradient-emerald);
-  }
-
-  .gradient-soft {
-    background: var(--gradient-soft);
-  }
-
-  .shadow-soft {
-    box-shadow: var(--shadow-soft);
-  }
-
-  .shadow-card {
-    box-shadow: var(--shadow-card);
-  }
-
-  .shadow-elevated {
-    box-shadow: var(--shadow-elevated);
-  }
+  .font-serif { font-family: var(--font-serif); }
+  .font-sans { font-family: var(--font-sans); }
+  .font-south { font-family: var(--font-south); }
+  
+  .gradient-emerald { background: var(--gradient-emerald); }
+  .gradient-soft { background: var(--gradient-soft); }
+  
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-elevated { box-shadow: var(--shadow-elevated); }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  .text-balance { text-wrap: balance; }
+  .animate-marquee { animation: marquee 25s linear infinite; }
+  .animate-marquee-pause:hover { animation-play-state: paused; }
+  .animate-fade-up { animation: fadeUp 0.8s ease-out forwards; }
+  .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+  .animate-scale-in { animation: scaleIn 0.6s ease-out forwards; }
+  .animate-float { animation: float 6s ease-in-out infinite; }
+  .animate-float-slow { animation: float 8s ease-in-out infinite; }
+  .animate-float-fast { animation: float 4s ease-in-out infinite; }
+  .animate-pulse-soft { animation: pulseSoft 3s ease-in-out infinite; }
+  .animate-shimmer { animation: shimmer 2s ease-in-out infinite; }
+  .animate-bounce-soft { animation: bounceSoft 2s ease-in-out infinite; }
+  .animate-glow { animation: glow 2s ease-in-out infinite alternate; }
 
-  .animate-marquee {
-    animation: marquee 25s linear infinite;
-  }
-
-  .animate-marquee-pause:hover {
-    animation-play-state: paused;
-  }
-
-  .animate-fade-up {
-    animation: fadeUp 0.8s ease-out forwards;
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 1s ease-out forwards;
-  }
-
-  .animate-scale-in {
-    animation: scaleIn 0.6s ease-out forwards;
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .animate-float-slow {
-    animation: float 8s ease-in-out infinite;
-  }
-
-  .animate-float-fast {
-    animation: float 4s ease-in-out infinite;
-  }
-
-  .animate-pulse-soft {
-    animation: pulseSoft 3s ease-in-out infinite;
-  }
-
-  .animate-shimmer {
-    animation: shimmer 2s ease-in-out infinite;
-  }
-
-  .animate-bounce-soft {
-    animation: bounceSoft 2s ease-in-out infinite;
-  }
-
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
-  }
-
-  .hover-lift {
-    @apply transition-all duration-300 ease-out;
-  }
-
+  .hover-lift { @apply transition-all duration-300 ease-out; }
   .hover-lift:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px hsl(168 70% 18% / 0.2);
+    box-shadow: 0 20px 40px hsl(196 84% 29% / 0.2);
   }
+  .hover-scale { @apply transition-transform duration-300 ease-out; }
+  .hover-scale:hover { transform: scale(1.05); }
+  .hover-glow:hover { box-shadow: 0 0 30px hsl(196 84% 29% / 0.3); }
 
-  .hover-scale {
-    @apply transition-transform duration-300 ease-out;
-  }
-
-  .hover-scale:hover {
-    transform: scale(1.05);
-  }
-
-  .hover-glow:hover {
-    box-shadow: 0 0 30px hsl(168 70% 18% / 0.3);
-  }
-
-  .transition-smooth {
-    transition: var(--transition-smooth);
-  }
-
-  .transition-bounce {
-    transition: var(--transition-bounce);
-  }
+  .transition-smooth { transition: var(--transition-smooth); }
+  .transition-bounce { transition: var(--transition-bounce); }
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes pulseSoft {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-@keyframes bounceSoft {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 20px hsl(168 70% 18% / 0.2);
-  }
-  100% {
-    box-shadow: 0 0 40px hsl(168 70% 18% / 0.4);
-  }
-}
+/* KEYFRAMES (Sama seperti sebelumnya) */
+@keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes pulseSoft { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+@keyframes bounceSoft { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes glow { 0% { box-shadow: 0 0 20px hsl(196 84% 29% / 0.2); } 100% { box-shadow: 0 0 40px hsl(196 84% 29% / 0.4); } }
