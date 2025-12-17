@@ -1,5 +1,5 @@
 import heroImage from "@/assets/story.png";
-import logoImage from "@/assets/darcia-logo.png"; // Nama file logo diperbarui
+import logoImage from "@/assets/darcia-logo.png";
 
 const Hero = () => {
   return (
@@ -25,18 +25,20 @@ const Hero = () => {
                <img 
                  src={logoImage} 
                  alt="Darcia Logo" 
-                 // Ukuran logo disesuaikan, opacity sedikit diturunkan agar menyatu dengan background malam
                  className="w-12 md:w-16 h-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] opacity-90"
                />
             </div>
 
-            {/* 2. SUB-HEADLINE (Font South) */}
-            <span className="font-south text-white text-3xl md:text-5xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] relative z-10 mb-[-5px] md:mb-[-10px]">
+            {/* 2. SUB-HEADLINE (Font South.otf) */}
+            {/* - font-south: Menggunakan font South.otf dari CSS
+                - transform -rotate-2: Miring sedikit biar lebih natural kayak tulisan tangan
+                - mb-[-10px]: Negative margin biar nempel dikit ke headline bawahnya
+            */}
+            <span className="font-south text-white text-4xl md:text-6xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] relative z-10 mb-[-10px] md:mb-[-15px] transform -rotate-2">
               The Specialised
             </span>
 
             {/* 3. MAIN HEADLINE (GLOWING EFFECT) */}
-            {/* Efek cahaya putih (glow) ada di class text-shadow arbitrary values di bawah ini */}
             <h1 className="font-sinera text-[3.5rem] sm:text-6xl md:text-8xl lg:text-[7.5rem] text-white leading-[0.9] [text-shadow:_0_2px_5px_rgba(0,0,0,0.3),_0_0_20px_rgba(255,255,255,0.8),_0_0_40px_rgba(255,255,255,0.5)]">
               Digital <br />
               Wedding <br />
