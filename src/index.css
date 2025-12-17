@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-/* Font South Custom */
+/* --- FIX DISINI --- */
+/* Hapus '.src', cukup './assets' */
 @font-face {
   font-family: 'South';
-  src: url('.src/assets/South.otf') format('opentype');
+  src: url('./assets/South.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -60,10 +61,9 @@
     --radius: 0.5rem;
 
     /* Custom Colors Re-mapped */
-    /* --emerald sekarang isinya warna biru #0C6587 biar gak perlu ubah nama class di komponen */
     --emerald: 196 84% 29%;      /* #0C6587 */
-    --emerald-dark: 196 90% 15%; /* Versi lebih gelap */
-    --emerald-light: 196 70% 45%; /* Versi lebih terang */
+    --emerald-dark: 196 90% 15%; 
+    --emerald-light: 196 70% 45%; 
     
     --ivory: 40 33% 98%;
     --ivory-dark: 40 20% 94%;
@@ -97,8 +97,7 @@
   }
 
   .dark {
-    /* Dark Mode Theme - Base Dark Background */
-    --background: 196 50% 8%; /* Sangat gelap, mendekati hitam biru */
+    --background: 196 50% 8%; 
     --foreground: 40 33% 98%;
 
     --card: 196 45% 12%;
@@ -107,7 +106,7 @@
     --popover: 196 50% 8%;
     --popover-foreground: 40 33% 98%;
 
-    --primary: 196 70% 50%; /* Lebih terang di dark mode agar kontras */
+    --primary: 196 70% 50%; 
     --primary-foreground: 196 50% 8%;
 
     --secondary: 196 30% 18%;
@@ -191,7 +190,7 @@
   .transition-bounce { transition: var(--transition-bounce); }
 }
 
-/* KEYFRAMES (Sama seperti sebelumnya) */
+/* KEYFRAMES */
 @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
