@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const packages = [
   {
-    name: "Premium",
-    tagline: "Rekomendasi",
-    price: "Rp 150.000",
+    name: "Exclusive",
+    tagline: "All-in-One",
+    price: "Rp 350.000",
     features: [
       "Semua Fitur Dasar",
       "Desain Premium",
@@ -15,47 +15,6 @@ const packages = [
       "Amplop Digital",
     ],
     highlight: true,
-    tier: "premium",
-  },
-  {
-    name: "Deluxe",
-    tagline: "Best Value",
-    price: "Rp 250.000",
-    features: [
-      "Semua Fitur Dasar",
-      "Semua Desain (Bebas Pilih)",
-      "Masa Aktif 8 Bulan",
-      "Foto (20)",
-      "Video (1)",
-      "Love Story",
-      "Amplop Digital",
-      "Pengingat Acara",
-      "Ganti Warna",
-    ],
-    highlight: false,
-    tier: "deluxe",
-  },
-  {
-    name: "Exclusive",
-    tagline: "All-in-One",
-    price: "Rp 350.000",
-    features: [
-      "Semua Fitur Dasar",
-      "Semua Desain (Bebas Pilih)",
-      "Masa Aktif 1 Tahun",
-      "Foto (25)",
-      "Video (1)",
-      "Love Story",
-      "Amplop Digital",
-      "Pengingat Acara",
-      "Ganti Warna",
-      "Split Link",
-      "Kirim Kado",
-      "Akses Live Streaming",
-      "Dresscode",
-      "Invitation Letter",
-    ],
-    highlight: false,
     tier: "exclusive",
   },
 ];
@@ -110,11 +69,11 @@ const Packages = () => {
         </div>
 
         {/* Packages Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="flex justify-center">
           {packages.map((pkg, idx) => (
             <div
               key={idx}
-              className={`relative rounded-3xl p-6 md:p-8 transition-all duration-300 hover:-translate-y-2 ${
+              className={`relative rounded-3xl p-6 md:p-8 transition-all duration-300 hover:-translate-y-2 max-w-md w-full ${
                 pkg.highlight
                   ? "bg-primary text-primary-foreground shadow-elevated"
                   : "bg-background text-foreground shadow-card"
