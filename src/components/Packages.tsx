@@ -37,7 +37,7 @@ const Packages = () => {
       <div className="container mx-auto px-4 md:px-8">
         
         {/* --- HEADER --- */}
-        <div className="text-center mb-16 md:mb-20 flex flex-col items-center animate-fade-up">
+        <div className="text-center mb-16 flex flex-col items-center animate-fade-up">
           <span className="font-south text-primary text-4xl md:text-5xl mb-[-5px] md:mb-[-10px] relative z-10 transform -rotate-2 opacity-90">
             The Options
           </span>
@@ -50,90 +50,89 @@ const Packages = () => {
           </p>
         </div>
 
-        {/* --- BASIC FEATURES (Clean Style) --- */}
-        <div className="max-w-5xl mx-auto mb-20 animate-fade-up" style={{ animationDelay: '0.1s' }}>
-          <div className="border border-primary/10 rounded-[2rem] p-8 md:p-10 bg-[#F7F0E6]/30">
-            <h3 className="font-sinera text-2xl md:text-3xl text-primary mb-8 text-center">
-              Fitur Dasar (Included)
-            </h3>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-8">
-              {basicFeatures.map((feature, idx) => (
-                <div key={idx} className="flex items-center gap-3 group">
-                  <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
-                    <Check className="w-3 h-3 text-primary" strokeWidth={3} />
-                  </div>
-                  <span className="font-sans text-sm md:text-base text-primary/80 font-medium">
-                    {feature}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* --- PACKAGES CARD (AURIX STYLE GLOW) --- */}
-        {/* Style Reference: Dark card with glowing backdrop */}
+        {/* --- PACKAGES CARD (SLIM & GRADIENT) --- */}
         <div className="flex justify-center mb-20 animate-fade-up relative z-10" style={{ animationDelay: '0.2s' }}>
           
           {packages.map((pkg, idx) => (
-            <div key={idx} className="relative w-full max-w-md group">
+            // max-w-sm: Ukuran card dibuat lebih ramping (Compact)
+            <div key={idx} className="relative w-full max-w-sm group">
               
-              {/* 1. GLOW EFFECT (Behind Card) */}
-              {/* Efek cahaya berpendar di belakang card, meniru style referensi */}
-              <div className="absolute -inset-1 bg-gradient-to-b from-primary/20 to-primary/60 rounded-[2.5rem] blur-2xl opacity-70 group-hover:opacity-100 transition duration-500"></div>
+              {/* 1. GLOW EFFECT */}
+              <div className="absolute -inset-1 bg-gradient-to-b from-primary/40 to-primary/10 rounded-[2.5rem] blur-2xl opacity-60 group-hover:opacity-100 transition duration-500"></div>
               
               {/* 2. CARD CONTENT */}
-              <div className="relative bg-primary text-white rounded-[2rem] p-8 md:p-10 overflow-hidden border border-white/10 shadow-2xl">
+              {/* p-6 md:p-8: Padding disesuaikan biar pas dengan ukuran card yang lebih kecil */}
+              <div className="relative bg-gradient-to-br from-primary to-[#063445] text-white rounded-[2rem] p-6 md:p-8 overflow-hidden border border-white/10 shadow-2xl">
                 
                 {/* Decorative Blur Inside */}
-                <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full blur-[60px] pointer-events-none"></div>
+                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-[50px] pointer-events-none"></div>
 
-                {/* --- TOP SECTION: NAME & PRICE --- */}
-                <div className="mb-8">
+                {/* --- TOP SECTION --- */}
+                <div className="mb-6 relative z-10">
                    <div className="flex justify-between items-start mb-2">
                       <div>
                         <h3 className="font-sinera text-3xl md:text-4xl tracking-wide">{pkg.name}</h3>
-                        <p className="font-sans text-white/60 text-xs uppercase tracking-widest mt-1">{pkg.tagline}</p>
+                        <p className="font-sans text-white/60 text-[10px] uppercase tracking-widest mt-1">{pkg.tagline}</p>
                       </div>
-                      {/* Badge "Best" */}
-                      <span className="bg-white/10 border border-white/10 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-white/80">
+                      <span className="bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-white shadow-sm">
                         Popular
                       </span>
                    </div>
 
-                   {/* Price (Besar tapi proporsional) */}
-                   <div className="font-sinera text-5xl md:text-6xl text-white mt-6 tracking-tight">
+                   {/* Price (Sedikit dikecilin biar muat enak) */}
+                   <div className="font-sinera text-4xl md:text-5xl text-white mt-5 tracking-tight drop-shadow-lg">
                       {pkg.price}
-                      <span className="text-lg text-white/40 font-sans font-light ml-2">/ event</span>
+                      <span className="text-base text-white/40 font-sans font-light ml-2">/ event</span>
                    </div>
                 </div>
 
-                {/* --- ACTION BUTTON (Middle Position like Reference) --- */}
+                {/* --- ACTION BUTTON --- */}
                 <Link
                   to="/order"
-                  className="block w-full bg-white text-primary text-center py-4 rounded-xl font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-[#F7F0E6] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300 mb-10"
+                  className="block w-full bg-white text-primary text-center py-3.5 rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-[#F7F0E6] hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all duration-300 mb-8 relative z-10"
                 >
                   Pilih Paket
                 </Link>
 
-                {/* --- FEATURES LIST (Bottom Section) --- */}
-                <div className="border-t border-white/10 pt-8">
-                  <p className="font-sans text-white/50 text-xs uppercase tracking-widest mb-6 font-medium">
-                    What's included:
-                  </p>
-                  <ul className="space-y-4">
-                    {pkg.features.map((feature, fIdx) => (
-                      <li key={fIdx} className="flex items-center gap-4">
-                        <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                          <Check className="w-3.5 h-3.5 text-white" />
+                {/* --- FEATURES SECTION --- */}
+                <div className="border-t border-white/10 pt-6 relative z-10">
+                  
+                  {/* A. EXCLUSIVE FEATURES */}
+                  <div className="mb-6">
+                    <p className="font-sans text-white/60 text-[10px] uppercase tracking-widest mb-3 font-bold">
+                      Exclusive Features:
+                    </p>
+                    <ul className="space-y-2.5">
+                      {pkg.features.map((feature, fIdx) => (
+                        <li key={fIdx} className="flex items-center gap-3">
+                          <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                            <Sparkle className="w-2.5 h-2.5 text-white" />
+                          </div>
+                          <span className="font-sans text-white font-medium text-xs md:text-sm tracking-wide">
+                            {feature}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* B. BASIC FEATURES (Merged) */}
+                  <div className="pt-5 border-t border-white/10 border-dashed">
+                    <p className="font-sans text-white/50 text-[10px] uppercase tracking-widest mb-3 font-bold">
+                      Also Includes:
+                    </p>
+                    <div className="grid grid-cols-2 gap-y-2 gap-x-2">
+                      {basicFeatures.map((feature, idx) => (
+                        <div key={idx} className="flex items-center gap-1.5">
+                           <Check className="w-3 h-3 text-white/40 flex-shrink-0" />
+                           <span className="font-sans text-white/60 text-[10px] md:text-xs font-light leading-tight">
+                             {feature}
+                           </span>
                         </div>
-                        <span className="font-sans text-white/90 font-light text-sm md:text-base tracking-wide">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                      ))}
+                    </div>
+                  </div>
+
                 </div>
 
               </div>
