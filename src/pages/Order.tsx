@@ -5,8 +5,6 @@ import MarqueeBanner from "@/components/MarqueeBanner";
 import Footer from "@/components/Footer";
 
 const packages = [
-  { name: "Premium", price: "Rp 150.000" },
-  { name: "Deluxe", price: "Rp 250.000" },
   { name: "Exclusive", price: "Rp 350.000" },
 ];
 
@@ -39,7 +37,7 @@ const Order = () => {
 - Catatan: ${formData.catatan || "-"}`;
 
     const encoded = encodeURIComponent(message);
-    window.open(`https://wa.me/6282254153840?text=${encoded}`, "_blank");
+    window.open(`https://wa.me/6285265048930?text=${encoded}`, "_blank");
   };
 
   return (

@@ -55,7 +55,7 @@ const FAQ = () => {
     <section id="faq" className="py-24 md:py-32 bg-card">
       <div className="container mx-auto px-4 md:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-up">
           <h2 className="font-serif text-4xl md:text-6xl text-foreground mb-2">
             Frequently
           </h2>
@@ -74,7 +74,8 @@ const FAQ = () => {
               <AccordionItem
                 key={idx}
                 value={`item-${idx}`}
-                className="bg-background rounded-2xl px-6 border-none shadow-soft"
+                className="bg-background rounded-2xl px-6 border-none shadow-soft hover:shadow-card transition-all duration-300 animate-fade-up"
+                style={{ animationDelay: `${idx * 0.1}s` }}
               >
                 <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline py-5">
                   {faq.question}
