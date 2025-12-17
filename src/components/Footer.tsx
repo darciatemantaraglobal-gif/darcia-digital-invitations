@@ -19,12 +19,16 @@ const Footer = () => {
           
           {/* 1. BRAND SECTION */}
           <div className="md:col-span-2 space-y-6">
-            <div className="flex items-center gap-3">
-              <img src={logo} alt="Darcia" className="h-10 w-auto brightness-0 invert opacity-90" />
-              <span className="font-serif text-3xl font-medium tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
-                Darcia
-              </span>
+            
+            {/* LOGO ONLY (No Text) */}
+            <div className="block">
+              <img 
+                src={logo} 
+                alt="Darcia" 
+                className="h-12 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition-opacity duration-300" 
+              />
             </div>
+
             <p className="text-white/60 leading-relaxed max-w-sm font-light text-sm md:text-base">
               Specialised website invitation yang bikin momen pernikahan kamu 
               jadi lebih <span className="text-emerald-200/80 italic">effortless</span>, 
